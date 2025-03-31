@@ -1,0 +1,47 @@
+------ JAVASCRIPT-----
+
+document.addEventListener('DOMContentLoaded', () => {
+    const loginForm = document.getElementById('loginForm');
+    const usernameInput = document.getElementById('username');
+    const passwordInput = document.getElementById('password');
+
+    // Handle form submission
+    loginForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        
+        const username = usernameInput.value;
+        const password = passwordInput.value;
+
+        // Here you would typically send these credentials to your server
+        console.log('Login attempt:', { username, password });
+        
+        // For demo purposes, show an alert
+        alert('Login realizado com sucesso!');
+    });
+
+    // Add input animations
+    const inputs = document.querySelectorAll('.input-group input');
+    inputs.forEach(input => {
+        input.addEventListener('focus', () => {
+            input.parentElement.classList.add('focused');
+        });
+
+        input.addEventListener('blur', () => {
+            if (!input.value) {
+                input.parentElement.classList.remove('focused');
+            }
+        });
+    });
+
+    // Handle "Esqueceu a senha" link
+    document.querySelector('.forgot-password').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Funcionalidade de recuperação de senha será implementada em breve!');
+    });
+
+    // Handle "Cadastre-se" link
+    document.querySelector('.register').addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('Página de cadastro será implementada em breve!');
+    });
+}); 
